@@ -22,12 +22,12 @@ public class CsvParser
             }
             if (record.OPC < 0)
             {
-                Console.WriteLine($"Invalid DC value {record.OPC} for location {record.loc}");
+                Console.WriteLine($"Invalid OPC value {record.OPC} for location {record.loc}");
                 continue;
             }
             if (record.TSQ < 0)
             {
-                Console.WriteLine($"Invalid DC value {record.TSQ} for location {record.loc}");
+                Console.WriteLine($"Invalid TSQ value {record.TSQ} for location {record.loc}");
                 continue;
             }
             if (record.OAC < 0)
@@ -37,7 +37,7 @@ public class CsvParser
             }
             record.GasDay = gasDay.Date;
             record.cycle = cycle;
-            
+
             validRecords.Add(record);
         }
         return validRecords;
