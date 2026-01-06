@@ -18,5 +18,7 @@ CREATE TABLE operationally_available_capacity (
   auth_overrun_ind CHAR(1),
   nom_cap_exceed_ind CHAR(1),
   all_qty_avail CHAR(1),
-  qty_reason TEXT
+  qty_reason TEXT,
+
+  CONSTRAINT unique_gas_record UNIQUE (gas_day, gas_cycle, loc)
 );

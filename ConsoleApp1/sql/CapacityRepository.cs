@@ -18,7 +18,9 @@ public class CapacityRepository{
             )
             VALUES(
             @GasDay, @cycle, @loc, @locZn, @locName, @locPurpDesc, @locQTI, @flowInd, @DC, @OPC, @TSQ, @OAC, @IT, @authOverrunInd, @nomCapExceedInd, @allQtyAvail, @qtyReason
-            )";
+            )
+            ON CONFLICT (gas_day, gas_cycle, loc) DO NOTHING";
+            
 
             connection.Execute(sql, records);
     }
