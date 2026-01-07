@@ -1,4 +1,5 @@
 using System.Web;
+using System.Globalization;
 
 public class CsvDownloader
 {
@@ -29,7 +30,7 @@ public class CsvDownloader
         query["searchString"] = "";
         query["locType"]= "ALL";
         query["locZone"] = "ALL";
-        query["gasDay"]= gasDay.ToString("MM/dd/yyyy");
+        query["gasDay"]= gasDay.ToString("MM/dd/yyyy", CultureInfo.InvariantCulture);
         query["cycle"] = cycle.ToString();
 
 
